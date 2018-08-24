@@ -8,10 +8,20 @@
 
 import UIKit
 
+protocol TargetAction {
+    func performAction()
+    
+}
+
 class SortTool: NSObject {
     
     func test() {
-        let addNum = add(4)
+        //swift柯里化(Currying)
+        let addNum = add(4)//这一步不会返回具体值，而是返回余下函数
+        let allNum = addNum(10);
+        print(allNum);
+        
+        
     }
     
     //swift 泛型  tuple
