@@ -14,6 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         SortTool.init().test()
+        
+        binaryTreeTest()
     }
 
     override func didReceiveMemoryWarning() {
