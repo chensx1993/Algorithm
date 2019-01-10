@@ -26,8 +26,65 @@ class SortTool: NSObject {
         array = mergeSort(array)
         print(array)
         
+        array.sort { (num1, num2) -> Bool in
+            if num1 > num2 {
+                return true
+            }
+            return false;
+        }
+        
     }
     
+    //=======================快速排序======================
+    func quickSort(_ array:[Int]) -> [Int] {
+        guard array.count > 1 else {
+            return array
+        }
+        
+        let pivot = array[array.count / 2]
+        let left = array.filter { $0 < pivot }
+        let middle = array.filter { $0 == pivot }
+        let right = array.filter { $0 > pivot }
+        
+        return quickSort(left) + middle + quickSort(right)
+        
+    }
+    
+    func quickSort(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+    
+    func partition(_ array: inout [Int], _ low: Int, _ hight: Int) {
+        var i = low + 1, j = hight
+        
+        while true {
+            
+            while array[i] < array[low] {
+                i += 1
+                if i == hight {
+                    break
+                }
+            }
+            
+            while array[j] > array[low] {
+                j -= 1
+                if j == low {
+                    break
+                }
+            }
+            
+            if i >= j {
+                break
+            }
+            
+            swap(&array, i, j)
+        }
+        
+        swap(&array, low, j)
+    }
+    
+    
+    //=======================归并排序=====================
     func mergeSort(_ array: [Int]) -> [Int] {
         var helper = Array(repeating: 0, count: array.count), array = array
         mergeSort(&array, &helper, 0, array.count - 1)
@@ -40,8 +97,14 @@ class SortTool: NSObject {
         }
         
         let middle = (high - low) / 2 + low
+        
+        print("left: low: \(low)  middle: \(middle)  high: \(high)")
         mergeSort(&array, &helper, low, middle)
+        
+        print("right: low: \(low)  middle: \(middle+1)  high: \(high)")
         mergeSort(&array, &helper, middle + 1, high)
+        
+        print("merge操作: low: \(low)  middle: \(middle)  high: \(high) \n\n")
         merge(array: &array, &helper, low, middle, high)
     }
     
@@ -86,6 +149,7 @@ class SortTool: NSObject {
     }
     
     
+    
     //swift 泛型  tuple
     func swap<T>(_ nums: inout [T], _ p: Int, _ q: Int) {
         (nums[p], nums[q]) = (nums[q], nums[p])
@@ -119,8 +183,6 @@ class SortTool: NSObject {
 //        }
 //        return dividend! / divisor!
 //    }
-    
-    
     
 
 }

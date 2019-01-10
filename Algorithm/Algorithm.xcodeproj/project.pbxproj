@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD24F27421354B0C0096C559 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD24F27321354B0C0096C559 /* BinaryTree.swift */; };
+		CD44F91A218846C30077706C /* SearchTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD44F919218846C30077706C /* SearchTool.swift */; };
 		CDB435E8212EC030004131AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB435E7212EC030004131AA /* AppDelegate.swift */; };
 		CDB435EA212EC030004131AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB435E9212EC030004131AA /* ViewController.swift */; };
 		CDB435ED212EC030004131AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB435EB212EC030004131AA /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		CD24F27321354B0C0096C559 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		CD44F919218846C30077706C /* SearchTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTool.swift; sourceTree = "<group>"; };
 		CDB435E4212EC030004131AA /* Algorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB435E7212EC030004131AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB435E9212EC030004131AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,11 +88,12 @@
 			path = "二叉树";
 			sourceTree = "<group>";
 		};
-		CD24F275213565580096C559 /* 归并排序 */ = {
+		CD44F918218846820077706C /* 搜索 */ = {
 			isa = PBXGroup;
 			children = (
+				CD44F919218846C30077706C /* SearchTool.swift */,
 			);
-			path = "归并排序";
+			path = "搜索";
 			sourceTree = "<group>";
 		};
 		CDB435DB212EC030004131AA = {
@@ -116,6 +119,7 @@
 		CDB435E6212EC030004131AA /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				CD44F918218846820077706C /* 搜索 */,
 				CD24F26E2135398B0096C559 /* 二叉树 */,
 				CDB43615212EC050004131AA /* 排序 */,
 				CDB435E7212EC030004131AA /* AppDelegate.swift */,
@@ -149,7 +153,6 @@
 		CDB43615212EC050004131AA /* 排序 */ = {
 			isa = PBXGroup;
 			children = (
-				CD24F275213565580096C559 /* 归并排序 */,
 				CDB43616212EC067004131AA /* SortTool.swift */,
 			);
 			path = "排序";
@@ -289,6 +292,7 @@
 				CD24F27421354B0C0096C559 /* BinaryTree.swift in Sources */,
 				CDB435EA212EC030004131AA /* ViewController.swift in Sources */,
 				CDB435E8212EC030004131AA /* AppDelegate.swift in Sources */,
+				CD44F91A218846C30077706C /* SearchTool.swift in Sources */,
 				CDB43617212EC067004131AA /* SortTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

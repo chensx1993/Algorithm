@@ -30,6 +30,8 @@ func binaryTreeTest() {
     let isSortTree = isValidBST(root: node)
     print(isSortTree)
     
+    let res = levelOrderTraversal(root: node)
+    print(res)
     
 }
 
@@ -42,12 +44,65 @@ public class TreeNode {
     }
 }
 
+// ============= 用队列实现二叉树的层次遍历 =============
+func levelOrderTraversal(root: TreeNode?) -> [[Int]] {
+    var res = [[Int]]()
+    var queue = [TreeNode]()
+    if let root = root {
+        queue.append(root)
+    }
+    
+    while queue.count > 0 {
+        let size = queue.count
+        var level = [Int]()
+        
+        for _ in 0 ..< size {
+            let node = queue.removeFirst()
+            
+            level.append(node.val)
+            
+            if let left = node.left {
+                queue.append(left)
+            }
+            
+            if let right = node.right {
+                queue.append(right);
+            }
+        }
+        res.append(level)
+    }
+    
+    return res;
+}
+
+// ============= 用栈实现二叉树的前序遍历 ================
+func preorderTraversal(root: TreeNode?) -> [Int] {
+    var res = [Int]()
+    var stack = [TreeNode]()
+    var node = root
+    
+    while !stack.isEmpty || node != nil {
+        if node != nil {
+            res.append(node!.val)
+            stack.append(node!)
+            node = node?.left
+        }else {
+            node = stack.removeLast().right
+        }
+    }
+    return res;
+    
+}
+
+// ==================  二叉树的深度  ==================
 func maxDepth(root: TreeNode?) -> Int {
     guard let root = root else { return 0 }
     
     return max(maxDepth(root: root.left), maxDepth(root: root.right)) + 1;
 }
 
+
+// ================== 判断是否是二叉查找树 ================
 func isValidBST(root: TreeNode?) -> Bool {
     return _helper(node: root, nil, nil)
 }
